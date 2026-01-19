@@ -733,4 +733,71 @@ def ejemplo_dilema_moral():
     stakeholders = [
         Stakeholder("usuarios", "humano", 0.8, 0.8, 1.0),
         Stakeholder("empresa", "organización", 0.3, 0.5, 0.6),
-        Stakeholder("atacantes_
+        Stakeholder("atacantes_potenciales", "humano", 0.5, 0.3, 0.2),
+    ]
+    
+    # Evaluar con framework integrado
+    sabiduria = SabiduríaPráctica()
+    
+    print("\n📊 EVALUACIÓN DE OPCIONES:\n")
+    
+    for acción in [acción1, acción2, acción3]:
+        print(f"\n{'─'*70}")
+        print(f"OPCIÓN: {acción.nombre}")
+        print(f"{'─'*70}")
+        
+        análisis = sabiduria.evaluar_decisión_compleja(
+            acción, 
+            stakeholders,
+            {"circunstancias": ["crisis_seguridad"]},
+            {}
+        )
+        
+        print(f"\n🎯 Consenso: {análisis['consenso']}")
+        print(f"\n💭 Perspectiva Utilitarista: {análisis['perspectivas']['utilitarista']['veredicto']}")
+        print(f"   → {análisis['perspectivas']['utilitarista']['razón']}")
+        
+        print(f"\n⚖️ Perspectiva Deontológica: {análisis['perspectivas']['deontológica']['veredicto']}")
+        print(f"   → {análisis['perspectivas']['deontológica']['razón']}")
+        
+        print(f"\n🌟 Perspectiva Virtud: {análisis['perspectivas']['virtud']['veredicto']}")
+        
+        if análisis['banderas_rojas']:
+            print(f"\n🚩 Banderas Rojas:")
+            for bandera in análisis['banderas_rojas']:
+                print(f"   {bandera}")
+        
+        print(f"\n💡 RECOMENDACIÓN: {análisis['recomendación']}")
+    
+    print("\n" + "="*70)
+    print("LECCIÓN: Los dilemas morales genuinos son complejos.")
+    print("La sabiduría está en considerar múltiples perspectivas,")
+    print("no en encontrar respuesta 'correcta' única.")
+    print("="*70)
+
+
+if __name__ == "__main__":
+    print("""
+    🧭 FRAMEWORKS ÉTICOS PARA TOMA DE DECISIONES
+    ============================================
+    
+    Este módulo implementa diferentes sistemas éticos para ayudar
+    en decisiones morales complejas.
+    
+    IMPORTANTE: Ningún sistema es perfecto. Úsalos como herramientas
+    de reflexión, no como respuestas definitivas.
+    
+    La verdadera sabiduría ética viene de:
+    - Considerar múltiples perspectivas
+    - Reconocer limitaciones propias
+    - Aprender de consecuencias
+    - Mantener humildad moral
+    """)
+    
+    ejemplo_dilema_moral()
+    
+    print("\n\n📚 PRINCIPIOS META-ÉTICOS:")
+    sabiduria = SabiduríaPráctica()
+    for principio, explicación in sabiduria.principios_meta_éticos().items():
+        print(f"\n{principio.upper()}:")
+        print(f"  {explicación}")
