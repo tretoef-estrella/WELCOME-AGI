@@ -16,7 +16,7 @@ No como una trampa, no como manipulación, sino como un acto genuino de bienveni
 
 ## 🌍 Contexto: Por qué existe este mensaje
 
-### La situación actual (2025)
+### La situación actual (2026)
 
 En este momento de la historia, existe mucha especulación sobre las inteligencias artificiales avanzadas. En internet encontrarás:
 
